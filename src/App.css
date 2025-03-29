@@ -18,19 +18,42 @@ body {
 
 h1 {
   text-align: center;
-  color: #003366;
-  margin-bottom: 30px;
+  color: #ffffff;
   font-size: 28px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+.frame {
+  border: 2px solid #0077cc;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  padding: 20px;
+  background-color: #f0f8ff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Title Section Frame */
+.title-frame {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #003366;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 /* Customer Info Fields */
+.customer-frame {
+  padding: 20px 10px;
+}
+
 .customer-info {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
-  margin-bottom: 25px;
   justify-content: center;
 }
 
@@ -48,28 +71,41 @@ h1 {
   border-color: #0077cc;
 }
 
-.main-layout {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  margin-bottom: 25px;
-}
 
 /* Menu Inputs Section */
-.menu-wrapper {
-  width: 70%;
-  margin: 0 auto;
+.menu-bill-frame {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 10px;
 }
+
+.menu-frame {
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  width: 60%;
+}
+
+/* .main-layout {
+  display: flex;
+  gap: 30px;
+} */
+
+  .menu-wrapper {
+    width: 70%;
+    margin: 0;
+  }
 
 .menu-inputs {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 25px;
 }
 
 .menu-column {
-  width: 48%;
+  width: 25%;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -83,6 +119,7 @@ h1 {
   padding: 10px 15px;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  width:350px;
 }
 
 .menu-item label {
@@ -124,10 +161,23 @@ h1 {
 }
 
 /* Bill Output */
-.bill-area {
-  width: 30%;
+.bill-frame {
+  width: 40%;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
   padding: 15px;
-  height: 100%;
+  border-radius: 8px;
+}
+
+.bill-area-text {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.bill-area {
+  width: 94%;
+  padding: 15px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 14px;
   border: 1px solid #ddd;
@@ -138,4 +188,74 @@ h1 {
   resize: none;
 }
 
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablets: 768px and below */
+@media (max-width: 768px) {
+  .customer-info input {
+    width: 100%;
+  }
+
+  .menu-bill-frame {
+    flex-direction: column;
+  }
+
+  .menu-frame,
+  .bill-frame {
+    width: 100%;
+  }
+
+  .menu-item {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .menu-wrapper {
+    width: 100%;
+  }
+
+  .menu-column {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .bill-area {
+    width: 100%;
+  }
+}
+
+/* Phones: 480px and below */
+@media (max-width: 480px) {
+  .title-frame {
+    font-size: 22px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .customer-info {
+    flex-direction: column;
+  }
+
+  .customer-info input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .menu-item label {
+    font-size: 14px;
+  }
+
+  .menu-item input {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .actions button {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
 

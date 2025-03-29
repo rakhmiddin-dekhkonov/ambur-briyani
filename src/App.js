@@ -47,24 +47,31 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Ambur Briyani Billing</h1>
+      <div className="frame title-frame">
+        <h1>Billing Software</h1>
+      </div>
 
-      <CustomerDetails
-        customerName={customerName}
-        setCustomerName={setCustomerName}
-        phoneNumber={phoneNumber}
-        setPhoneNumber={setPhoneNumber}
-        billNumber={billNumber}
-        setBillNumber={setBillNumber}
-      />
-
-      <div className="main-layout">
-        <MenuInput
-          quantities={quantities}
-          handleQuantityChange={handleQuantityChange}
+      <div className="frame customer-frame">
+        <CustomerDetails
+          customerName={customerName}
+          setCustomerName={setCustomerName}
+          phoneNumber={phoneNumber}
+          setPhoneNumber={setPhoneNumber}
+          billNumber={billNumber}
+          setBillNumber={setBillNumber}
         />
+      </div>
 
-        <BillArea billText={billText} />
+      <div className="frame menu-bill-frame">
+        <div className=" menu-frame main-layout">
+          <MenuInput
+            quantities={quantities}
+            handleQuantityChange={handleQuantityChange}
+          />
+        </div>
+        <div className="bill-frame">
+          <BillArea billText={billText} />
+        </div>
       </div>
 
       <TotalSummary
