@@ -21,21 +21,43 @@ function App() {
 
   const generateBill = () => {
     let total = 0;
-    let billDetails = `Welcome Ambur Briyani\nBill Number: ${billNumber}\nCustomer Name: ${customerName}\nPhone Number: ${phoneNumber}\n=====================================\nProducts\tQTY\tPrice\n`;
-
+    let billDetails = `Welcome Ambur Briyani\n`;
+    billDetails += `Bill Number: ${billNumber}\n`;
+    billDetails += `Customer Name: ${customerName}\n`;
+    billDetails += `Phone Number: ${phoneNumber}\n`;
+    billDetails += `============================================\n`;
+    billDetails += `${"Products".padEnd(25)}${"QTY".padEnd(10)}${"Price".padEnd(10)}\n`;
+  
     menuItems.forEach((item) => {
       const qty = quantities[item.name] || 0;
       if (qty > 0) {
         const price = qty * item.price;
         total += price;
-        billDetails += `${item.name}\t${qty}\t${price}\n`;
+        billDetails += `${item.name.padEnd(25)}${String(qty).padEnd(10)}${String(price).padEnd(10)}\n`;
       }
     });
-
-    billDetails += "=====================================\n";
+  
+    billDetails += `============================================\n`;
     billDetails += `Total: Rs. ${total}`;
     setBillText(billDetails);
   };
+  
+
+  const saveBill = () => {
+    if (!billText) {
+      alert("Please generate a bill first.");
+      return;
+    }
+  
+    const element = document.createElement("a");
+    const file = new Blob([billText], { type: "text/plain" });
+    element.href = URL.createObjectURL(file);
+    element.download = `bill_${billNumber}.txt`;
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  };
+  
 
   const clearAll = () => {
     setCustomerName('');
@@ -76,6 +98,7 @@ function App() {
 
       <TotalSummary
         generateBill={generateBill}
+        saveBill={saveBill}
         clearAll={clearAll}
       />
     </div>
