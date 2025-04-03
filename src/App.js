@@ -11,7 +11,7 @@ import './App.css';
 function App() {
   const [customerName, setCustomerName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [billNumber, setBillNumber] = useState('5191');
+  const [billNumber, setBillNumber] = useState('');
   const [quantities, setQuantities] = useState({});
   const [billText, setBillText] = useState('');
 
@@ -20,6 +20,17 @@ function App() {
   };
 
   const generateBill = () => {
+    const missingFields = [];
+
+    if (!customerName.trim()) missingFields.push("Customer Name");
+    if (!phoneNumber.trim()) missingFields.push("Phone Number");
+    if (!billNumber.trim()) missingFields.push("Bill Number");
+
+    if (missingFields.length > 0) {
+      alert(`Please enter the following:\n- ${missingFields.join("\n- ")}`);
+      return;
+    }
+
     let total = 0;
     let billDetails = `Welcome Ambur Briyani\n`;
     billDetails += `Bill Number: ${billNumber}\n`;

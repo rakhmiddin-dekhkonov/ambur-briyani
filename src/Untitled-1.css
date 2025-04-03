@@ -1,0 +1,114 @@
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablets: 768px and below */
+@media (max-width: 768px) {
+  .customer-info input {
+    width: 100%;
+  }
+
+  .menu-bill-frame {
+    flex-direction: column;
+  }
+
+  .menu-frame,
+  .bill-frame {
+    width: 100%;
+  }
+
+  .menu-item {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .menu-wrapper {
+    width: 100%;
+  }
+
+  .menu-column {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .bill-area {
+    width: 100%;
+  }
+}
+
+/* Phones: 480px and below */
+@media (max-width: 480px) {
+  .title-frame {
+    font-size: 22px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .customer-info {
+    flex-direction: column;
+  }
+
+  .customer-info input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .menu-item label {
+    font-size: 14px;
+  }
+
+  .menu-item input {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .actions button {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+.customer-info input {
+  width: 100%;
+}
+
+
+.menu-frame, .bill-frame {
+  width: 90%;
+}
+
+.menu-item label {
+  font-size: 14px;
+}
+
+.menu-item input {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.bill-area {
+  width: 91%;
+}
+
+.actions button {
+  width: 100%;
+  margin: 10px 0;
+}
+
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f8ff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  width:350px;
+}
+
+.menu-column {
+  width: 100%;
+}
