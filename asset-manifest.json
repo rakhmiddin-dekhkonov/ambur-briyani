@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ambur-briyani/static/css/main.d1fbe594.css",
+    "main.js": "/ambur-briyani/static/js/main.cd8bbc90.js",
+    "index.html": "/ambur-briyani/index.html",
+    "main.d1fbe594.css.map": "/ambur-briyani/static/css/main.d1fbe594.css.map",
+    "main.cd8bbc90.js.map": "/ambur-briyani/static/js/main.cd8bbc90.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d1fbe594.css",
+    "static/js/main.cd8bbc90.js"
+  ]
+}
